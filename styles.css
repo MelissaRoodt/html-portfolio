@@ -1,66 +1,67 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    margin: auto;
-    overflow: auto;
-    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    background-color: #1e2714;
 }
 
-h1, h2, a, p {
-    color: white;
+main {
+    padding-top: 4.7rem;
 }
 
-h1, h2 {
-    font-family: "Crimson Text", serif;
+h1, h2{
+    color: #C6CC0E;
+    font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-transform: uppercase;
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 48px;
 }
 
-.logo, .header, .navbar-items, .about, .project, .contact {
+a, p {
+    color: #9DA226;
+    font-family: "Tomorrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span {
+    font-style: italic;
+}
+
+.logo, .navbar-items, .about, .about-skills, .project-content, .contact {
     display: flex;
     gap: 1em;
     justify-content: center;
     align-items: center;
 }
 
-.header, .project, .about {
-    flex-direction: column;
-}
-
-.header {
-    height: 40vh;
-    background-color: rgba(255, 255, 255, 0.468);
-}
-
 .navbar {
     display: grid;
     padding: 10px;
     grid-template-columns: 50px 1fr;
-    background-color: rgba(255, 255, 255, 0.352);
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2C3523;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    overflow: hidden; /* Prevent any overflow issues */
 }
 
-.navbar a {
+.navbar a:hover svg {
+    fill: #f2fa12; /* Change the color of the h1 header */
+}
+
+.navbar-items a, .contact > a  {
+    padding: 10px;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-.navbar-items a {
-    padding: 10px;
 }
 
 .navbar-items {
@@ -68,71 +69,169 @@ h1 {
 }
 
 .navbar-items a:hover {
-    background-color: rgba(255, 255, 255, 0.223);
+    background-color: #C6CC0E;
     color: black;
 }
 
-.navbar-items:last-child{
-    padding-right: 10px;
+.about{
+    background-image: url(./public/images/pattern_1.png);
 }
 
-span {
-    font-style: italic;
+.about-content {
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    width: 65%;
+    background-color: #2C3523;
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    border: solid 2px transparent; /* Default border color to match hover */
+    border-bottom: solid #C6CC0E;
 }
 
-.about {
-    padding: 20px;
+.about-content:hover {
+    border-color: #C6CC0E;
 }
 
-p {
+.about-image {
+    position: relative;
+    overflow: hidden; /* Ensure the image doesn't overflow its container */
+}
+
+.about-image h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #C6CC0E; /* Ensure the text is visible */
+    background-color: #2C3523; /* Optional: Add a background for better readability */
+    padding: 5px;
     width: 70%;
-    text-align: center;
 }
 
-#picture {
-    width: 256px;
-    height: 256px;
-    border-radius: 50%;
-    border: solid white 8px;
+.about-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease; /* Smooth transition for the image zoom */
 }
 
-.project img {
-    width: 256px;
-    height: 256px;
+.about-content:hover .about-image img {
+    transform: scale(1.1); /* Zoom in the image */
 }
 
-.my-projects > h2 {
-    display: flex;
-    justify-content: center;
-    padding-top: 2em;
+.about-header {
+    transition: color 0.3s ease; /* Smooth transition for the header color */
+}
+
+.about-content:hover .about-header {
+    color: #f2fa12; /* Change the color of the h1 header */
+}
+
+.about-skills {
+    flex-direction: column;
 }
 
 .projects {
+    background-image: url(./public/images/pattern_2.png);
     display: grid;
-    grid-template-columns: 300px 300px;
-    justify-content: center;
-    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    justify-items: center;
+    padding: 20px;
+    gap: 20px;
 }
 
-#game-project:hover {
-    content: url("./public/images/btnGameHover.png");
+.project {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 256px 1fr;
+    width: 256px;
+    background-color: #2C3523;
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    border: solid 2px transparent; /* Default border color to match hover */
+    border-bottom: solid #C6CC0E;
 }
 
-#ai-project:hover {
-    content: url("./public/images/btnNNHover.png");
+.project-image {
+    position: relative;
+    overflow: hidden; /* Ensure the image doesn't overflow its container */
 }
 
-#full-project:hover {
-    content: url("./public/images/btnFullstackHover.png");
+.project-image h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #C6CC0E; /* Ensure the text is visible */
+    background-color: #2C3523; /* Optional: Add a background for better readability */
+    padding: 5px;
+    width: 70%;
 }
 
-#article-project:hover {
-    content: url("./public/images/btnArticlesHover.png");
+.project-image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease; /* Smooth transition for the image zoom */
+}
+
+.project-header {
+    transition: color 0.3s ease; /* Smooth transition for the header color */
+}
+
+.project:hover .project-image img {
+    transform: scale(1.1); /* Zoom in the image */
+}
+
+.project:hover .project-content h2 {
+    color: #f2fa12; /* Change the color of the h1 header */
+}
+
+.project:hover {
+    border-color: #C6CC0E;
+}
+
+.project-content {
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.project-content > .project-progress{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .contact {
     padding: 1rem;
 }
+
+.contact > a:hover {
+    text-shadow: 0 0 5px #C6CC0E; 
+}
+
+.skills {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skills .svg-container {
+    display: flex;
+    gap: 20px;
+    animation: moveRight 10s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+footer{
+    background-image: url(./public/images/pattern_1.png);
+}
+
 
 /*Media Queries*/
 
@@ -155,6 +254,18 @@ p {
         grid-template-columns: auto;
         gap: 20px;
     }
+
+    main {
+        padding-top: 17rem;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 256px;
+        grid-template-rows: 256px 1fr;
+        max-width: 256px;
+        height: 65vh;
+    }
 }
 
 @media (max-width: 769px) {
@@ -162,66 +273,5 @@ p {
         display: grid;
         grid-template-columns: auto;
         gap: 20px;
-    }
-}
-
-/*Animated Background*/
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-.wave {
-    background: rgb(255 255 255 / 25%);
-    border-radius: 1000% 1000% 0 0;
-    position: fixed;
-    width: 200%;
-    height: 12em;
-    animation: wave 10s -3s linear infinite;
-    transform: translate3d(0, 0, 0);
-    opacity: 0.8;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.wave:nth-of-type(2) {
-    bottom: -1.25em;
-    animation: wave 18s linear reverse infinite;
-    opacity: 0.8;
-}
-
-.wave:nth-of-type(3) {
-    bottom: -2.5em;
-    animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
-}
-
-@keyframes wave {
-    2% {
-        transform: translateX(1);
-    }
-
-    25% {
-        transform: translateX(-25%);
-    }
-
-    50% {
-        transform: translateX(-50%);
-    }
-
-    75% {
-        transform: translateX(-25%);
-    }
-
-    100% {
-        transform: translateX(1);
     }
 }
