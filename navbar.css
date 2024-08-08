@@ -1,0 +1,42 @@
+/*Navbar position*/
+.navbar {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 50px 1fr;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2C3523;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.logo, .navbar-items {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-items {
+    justify-content: flex-end;
+}
+
+/*Style links*/
+.navbar-items a {
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*Animations for links*/
+.navbar-items a:hover {
+    background-color: #C6CC0E;
+    color: black;
+}
+
+.navbar a:hover svg {
+    fill: #f2fa12;
+}

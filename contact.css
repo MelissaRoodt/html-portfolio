@@ -1,0 +1,42 @@
+.contact {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.contact > a:hover {
+    text-shadow: 0 0 5px #C6CC0E; 
+}
+
+.contact > a  {
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.skills {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skills .svg-container {
+    display: flex;
+    gap: 20px;
+    animation: moveRight 10s linear infinite;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+footer{
+    background-image: url(./public/images/pattern_1.png);
+}
