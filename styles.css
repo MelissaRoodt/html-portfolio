@@ -19,7 +19,7 @@ h1, h2{
 }
 
 h1 {
-    font-size: 48px;
+    font-size:10vw
 }
 
 a, p {
@@ -38,7 +38,7 @@ span {
 @media (max-width: 480px) {
 
     main {
-        padding-top: 14.7rem;
+        padding-top: 0rem;
     }
 
     .logo {
@@ -46,7 +46,9 @@ span {
     }
 
     .navbar {
-        grid-template-columns: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        position: static;
     }
 
     .navbar-items{
@@ -58,7 +60,9 @@ span {
         grid-template-columns: auto;
         gap: 20px;
     }
-    
+}
+
+@media (max-width: 645px) {
     .about-content {
         display: grid;
         grid-template-columns: 256px;
